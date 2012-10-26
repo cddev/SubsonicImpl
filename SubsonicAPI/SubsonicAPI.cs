@@ -694,11 +694,10 @@ namespace SubsonicAPI
 				hcHandler = new HttpClientHandler();
 				httpClient = new HttpClient(hcHandler);
 				httpClient.DefaultRequestHeaders.Authorization = authHeader;
-                      
-           
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("ping", null);
-				Stream theStream = await GettheStream;
+
+
+				Stream theStream = await this.MakeGenericRequest("ping", null);				
 
 
 				StreamReader sr = new StreamReader(theStream);
@@ -804,12 +803,8 @@ namespace SubsonicAPI
 						method += ".view";
 
 					string requestURL = BuildRequestURL(method, parameters);
-							
-              
-					Task<Stream> getStreamTask = httpClient.GetStreamAsync(requestURL);
 
-					Stream webStream = await getStreamTask;
-
+					Stream webStream = await httpClient.GetStreamAsync(requestURL);					
 
 					return webStream;
 				}
@@ -856,8 +851,8 @@ namespace SubsonicAPI
 			{
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getLicense", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getLicense", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -890,8 +885,8 @@ namespace SubsonicAPI
 
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getMusicFolders", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getMusicFolders", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -924,8 +919,8 @@ namespace SubsonicAPI
 				 if (!string.IsNullOrEmpty(ifModifiedSince))
 					parameters.Add("ifModifiedSince", ifModifiedSince);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getIndexes", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getIndexes", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -993,8 +988,8 @@ namespace SubsonicAPI
 		
 				parameters.Add("id", id);			
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getMusicDirectory", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getMusicDirectory", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1052,8 +1047,8 @@ namespace SubsonicAPI
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 	
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getArtists", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getArtists", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1087,8 +1082,8 @@ namespace SubsonicAPI
 
 				parameters.Add("id", id);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getArtist", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getArtist", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1131,8 +1126,8 @@ namespace SubsonicAPI
 
 				parameters.Add("id", id);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getAlbum", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getAlbum", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1187,8 +1182,8 @@ namespace SubsonicAPI
 
 				parameters.Add("id", id);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getSong", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getSong", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1228,8 +1223,8 @@ namespace SubsonicAPI
 			{
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getVideos", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getVideos", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1251,8 +1246,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(offset))
 					parameters.Add("offset", offset);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getAlbumList", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getAlbumList", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1290,8 +1285,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(offset))
 					parameters.Add("offset", offset);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getAlbumList2", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getAlbumList2", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1334,8 +1329,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(musicFolderId))
 					parameters.Add("musicFolderId", musicFolderId);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getRandomSongs", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getRandomSongs", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1371,8 +1366,8 @@ namespace SubsonicAPI
 			{			
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getNowPlaying", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getNowPlaying", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1411,8 +1406,8 @@ namespace SubsonicAPI
 			{
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getStarred", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getStarred", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1468,8 +1463,8 @@ namespace SubsonicAPI
 			{
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getStarred2", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getStarred2", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1543,8 +1538,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(newerThan))
 					parameters.Add("newerThan", newerThan);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("search", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("search", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1569,8 +1564,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(songOffset))
 					parameters.Add("songOffset", songOffset);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("search2", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("search2", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1638,8 +1633,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(songOffset))
 					parameters.Add("songOffset", songOffset);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("search3", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("search3", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1703,8 +1698,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(username))
 					parameters.Add("username", username);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getPlaylists", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getPlaylists", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1743,8 +1738,8 @@ namespace SubsonicAPI
 
 				parameters.Add("id", id);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getPlaylist", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getPlaylist", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1796,8 +1791,8 @@ namespace SubsonicAPI
 				parameters.Add("name", name);
 				parameters.Add("songId", songId);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("createPlaylist", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("createPlaylist", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1820,8 +1815,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(songIndexToRemove))
 					parameters.Add("songIndexToRemove", songIndexToRemove);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("updatePlaylist", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("updatePlaylist", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1835,8 +1830,8 @@ namespace SubsonicAPI
 
 				parameters.Add("id", id);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("deletePlaylist", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("deletePlaylist", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1908,8 +1903,8 @@ namespace SubsonicAPI
 					parameters.Add("artist", artist);
 				if (!string.IsNullOrEmpty(title))
 					parameters.Add("title", title);
-				Task<Stream> GettheStream = this.MakeGenericRequest("getLyrics", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getLyrics", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1945,8 +1940,8 @@ namespace SubsonicAPI
 					parameters.Add("albumId", albumId);
 				if (!string.IsNullOrEmpty(artistId))
 					parameters.Add("artistId", artistId);
-				Task<Stream> GettheStream = this.MakeGenericRequest("star", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("star", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1964,8 +1959,8 @@ namespace SubsonicAPI
 					parameters.Add("albumId", albumId);
 				if (!string.IsNullOrEmpty(artistId))
 					parameters.Add("artistId", artistId);
-				Task<Stream> GettheStream = this.MakeGenericRequest("unstar", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("unstar", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1980,8 +1975,8 @@ namespace SubsonicAPI
 				parameters.Add("id", id);			
 				parameters.Add("rating", rating);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("setRating", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("setRating", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -1996,8 +1991,8 @@ namespace SubsonicAPI
 				parameters.Add("id", id);
 				if (!string.IsNullOrEmpty(submission))
 					parameters.Add("submission", submission);
-				Task<Stream> GettheStream = this.MakeGenericRequest("scrobble", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("scrobble", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2012,8 +2007,8 @@ namespace SubsonicAPI
 			{
                 Dictionary<string, string> parameters = new Dictionary<string, string>();
 			
-				Task<Stream> GettheStream = this.MakeGenericRequest("getShares", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getShares", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2066,8 +2061,8 @@ namespace SubsonicAPI
 					parameters.Add("description", description);
 				if (!string.IsNullOrEmpty(expires))
 					parameters.Add("expires", expires);
-				Task<Stream> GettheStream = this.MakeGenericRequest("createShare", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("createShare", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2120,8 +2115,8 @@ namespace SubsonicAPI
 					parameters.Add("description", description);
 				if (!string.IsNullOrEmpty(expires))
 					parameters.Add("expires", expires);
-				Task<Stream> GettheStream = this.MakeGenericRequest("updateShare", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("updateShare", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2135,8 +2130,8 @@ namespace SubsonicAPI
 
 				parameters.Add("id", id);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("deleteShare", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("deleteShare", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2152,8 +2147,8 @@ namespace SubsonicAPI
 		{
 			Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-			Task<Stream> GettheStream = this.MakeGenericRequest("getPodcasts", parameters);
-			Stream theStream = await GettheStream;
+			Stream theStream = await this.MakeGenericRequest("getPodcasts", parameters);
+			
 
 			StreamReader sr = new StreamReader(theStream);
 
@@ -2208,8 +2203,8 @@ namespace SubsonicAPI
 			if (!string.IsNullOrEmpty(gain))
 				parameters.Add("gain", gain);
 			
-			Task<Stream> GettheStream = this.MakeGenericRequest("jukeboxControl", parameters);
-			Stream theStream = await GettheStream;
+			Stream theStream = await this.MakeGenericRequest("jukeboxControl", parameters);
+			
 
 			StreamReader sr = new StreamReader(theStream);
 
@@ -2256,8 +2251,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(since))
 					parameters.Add("since", since);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getChatMessages", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getChatMessages", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2279,8 +2274,8 @@ namespace SubsonicAPI
 						
 				parameters.Add("message", message);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("addChatMessage", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("addChatMessage", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2297,8 +2292,8 @@ namespace SubsonicAPI
 
 				parameters.Add("username", username);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getUser", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getUser", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2325,8 +2320,8 @@ namespace SubsonicAPI
 			{
 				Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("getUsers", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("getUsers", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2366,8 +2361,8 @@ namespace SubsonicAPI
 				if (!string.IsNullOrEmpty(shareRole))
 					parameters.Add("shareRole", shareRole);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("createUser", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("createUser", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2381,8 +2376,8 @@ namespace SubsonicAPI
 
 				parameters.Add("username", username);
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("deleteUser", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("deleteUser", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
@@ -2397,8 +2392,8 @@ namespace SubsonicAPI
 				parameters.Add("username", username);
 				parameters.Add("password", string.Format("enc:{0}", ConvertStringToHex(password)));
 
-				Task<Stream> GettheStream = this.MakeGenericRequest("changePassword", parameters);
-				Stream theStream = await GettheStream;
+				Stream theStream = await this.MakeGenericRequest("changePassword", parameters);
+				
 
 				StreamReader sr = new StreamReader(theStream);
 
