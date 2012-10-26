@@ -1,0 +1,5 @@
+This is a C# Implementation of the Subsonic API (http://www.subsonic.org/pages/api.jsp)
+It use System.Net.Http & System.Threading.Tasks to fit with the window store framework.
+The goal of this is to make a win 8 app for subsonic.
+VS 2012 is required if you want to test it, to do so you can take a look at the consoleTest project.
+Under GNU GPL License
